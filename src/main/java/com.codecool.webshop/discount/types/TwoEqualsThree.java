@@ -6,8 +6,8 @@ public class TwoEqualsThree extends Discount {
 
     private final int unitPrice;
 
-    public TwoEqualsThree(String name, int unitPrice) {
-        super(name);
+    public TwoEqualsThree(int unitPrice) {
+        super("2=3");
         this.unitPrice = unitPrice;
     }
 

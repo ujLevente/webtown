@@ -4,8 +4,8 @@ import com.codecool.webshop.discount.Discount;
 
 public class MegaPack extends Discount {
 
-    public MegaPack(String name) {
-        super(name);
+    public MegaPack() {
+        super("Megapack");
     }
 
     @Override
