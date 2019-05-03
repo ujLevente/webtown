@@ -10,6 +10,10 @@ public class Product {
     private int unitPrice;
     private int quantity = 0;
 
+    public int getQuantity() {
+        return quantity;
+    }
+
     public String getName() {
         return name;
     }

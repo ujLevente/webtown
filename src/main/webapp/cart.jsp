@@ -1,4 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ page import="com.codecool.webshop.service.DiscountService" %>
+<%@ page import="com.codecool.webshop.repository.ProductRepository" %>
+<%@ page import="com.codecool.webshop.repository.implementation.ProductRepositoryImpl" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,27 +15,21 @@
 
 <%
     DiscountService service = DiscountService.getInstance();
+    ProductRepository repository = ProductRepositoryImpl.getInstance();
+    application.setAttribute("itemsInCart", repository.getAllProducts());
 %>
 
 <body class="container">
     <div id="tableContainer">
         <table id="checkout-table" class="table">
             <tbody>
-                <tr>
-                    <th scope="row"></th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                </tr>
+                <c:forEach items="${itemsInCart}" var="product">
+                    <tr>
+                        <th scope="row"></th>
+                        <td><c:out value="${product.name}"/></td>
+                        <td><c:out value="${product.quantity}"/></td>
+                    </tr>
+                </c:forEach>
                 <tr>
                     <th scope="row"></th>
                     <td><b>Original price</b></td>
