@@ -1,3 +1,9 @@
+<%@ page import="com.codecool.webshop.repository.ProductRepository" %>
+<%@ page import="com.codecool.webshop.repository.implementation.ProductRepositoryImpl" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Arrays" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -10,6 +16,12 @@
     <link rel="stylesheet" href="static/css/product-submission.css">
 </head>
 
+<%
+    ProductRepository repository = ProductRepositoryImpl.getInstance();
+
+    application.setAttribute("productList", repository.getAllProducts());
+%>
+
 <body>
     <div class="container">
         <div id="tableContainer">
@@ -18,8 +30,11 @@
                 <div class="col">Amount</div>
                 <div class="col">Unit price</div>
             </div>
-
-
+        <%= repository.getAllProducts() %>
+        <c:out value="${productList}" />
+        <c:forEach items="${productList}" var="product">
+            <c:out value="${product.name}"/>
+        </c:forEach>
         </div>
     </div>
 </body>

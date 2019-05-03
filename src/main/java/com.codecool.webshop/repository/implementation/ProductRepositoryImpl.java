@@ -5,11 +5,12 @@ import com.codecool.webshop.discount.types.TwoEqualsThree;
 import com.codecool.webshop.model.Product;
 import com.codecool.webshop.repository.ProductRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRepositoryImpl implements ProductRepository {
 
-    private List<Product> products;
+    private List<Product> products = new ArrayList<>();
     private static ProductRepositoryImpl instance;
 
     private ProductRepositoryImpl() {
