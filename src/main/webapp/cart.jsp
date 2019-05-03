@@ -1,3 +1,4 @@
+<%@ page import="com.codecool.webshop.service.DiscountService" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,6 +10,9 @@
     <title>Webtown shop</title>
 </head>
 
+<%
+    DiscountService service = DiscountService.getInstance();
+%>
 
 <body class="container">
     <div id="tableContainer">
@@ -17,7 +21,6 @@
                 <tr>
                     <th scope="row"></th>
                     <td>Mark</td>
-<%= request.getParameter("Tej") %>
                     <td>Otto</td>
                 </tr>
                 <tr>
@@ -32,13 +35,18 @@
                 </tr>
                 <tr>
                     <th scope="row"></th>
-                    <td><b>original price</b></td>
-                    <td><b>1222</b></td>
+                    <td><b>Original price</b></td>
+                    <td><b><%= service.getOriginalPrice() %></b></td>
                 </tr>
                 <tr>
                     <th scope="row"></th>
-                    <td><b>dicount</b></td>
-                    <td><b>600</b></td>
+                    <td><b>Dicount(<%= service.getDiscountTypeApplied() %>)</b></td>
+                    <td><b><%= service.getDiscount() + "Ft" %></b></td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td><b>Price</b></td>
+                    <td><b>Price(<%= service.getOriginalPrice() - service.getDiscount() + "Ft"%>)</b></td>
                 </tr>
             </tbody>
         </table>

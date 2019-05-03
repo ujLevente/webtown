@@ -11,7 +11,8 @@ public class MegaPack extends Discount {
     @Override
     public int calculateDiscount(int amountOfProduct) {
         int pack = 12;
-        int discount = amountOfProduct / pack;
+        int amountOfDiscount = 6000;
+        int discount = amountOfProduct / pack * amountOfDiscount;
         return discount;
     }
 }

@@ -39,7 +39,9 @@
                                    class="form-control"
                                    min="0"
                                    type="number"
-                                   value="0" id="example-number-input">
+                                   value="0"
+                                   id="example-number-input"
+                                   required>
                         </div>
                         <div class="col-1"></div>
                         <div class="col text-center"><c:out value="${product.unitPrice} Ft" /></div>
