@@ -6,12 +6,14 @@ import com.codecool.webshop.model.Product;
 import com.codecool.webshop.repository.ProductRepository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class ProductRepositoryImpl implements ProductRepository {
 
     private List<Product> products = new ArrayList<>();
     private static ProductRepositoryImpl instance;
+    private HashMap<String, Product> productLookupTable = new HashMap<>();
 
     private ProductRepositoryImpl() {
     }
@@ -36,6 +38,13 @@ public class ProductRepositoryImpl implements ProductRepository {
         products.add(new Product("Tej", 289));
         products.add(new Product("Joghurt", 329));
         products.add(new Product("Száraz tészta",599));
+
+        products.forEach(p -> productLookupTable.put(p.getName(), p));
+    }
+
+    @Override
+    public Product getProductObjectByProductName(String name) {
+        return productLookupTable.get(name);
     }
 
     @Override

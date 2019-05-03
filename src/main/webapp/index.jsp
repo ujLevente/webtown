@@ -2,7 +2,7 @@
 <%@ page import="com.codecool.webshop.repository.implementation.ProductRepositoryImpl" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html lang="hu">
 <head>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -26,7 +26,7 @@
                 <div class="col"><b>Amount</b></div>
                 <div class="col"><b>Unit price</b></div>
             </div>
-            <form action="/cart-handler" method="post">
+            <form action="/cart-handler" method="get" >
 
                 <c:forEach items="${productList}" var="product" varStatus="loop">
                     <div class="form-group row">
