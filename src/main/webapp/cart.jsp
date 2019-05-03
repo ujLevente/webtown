@@ -24,11 +24,13 @@
         <table id="checkout-table" class="table">
             <tbody>
                 <c:forEach items="${itemsInCart}" var="product">
-                    <tr>
-                        <th scope="row"></th>
-                        <td><c:out value="${product.name}"/></td>
-                        <td><c:out value="${product.quantity}"/></td>
-                    </tr>
+                    <c:if test="${product.quantity > 0}" >
+                        <tr>
+                            <th scope="row"></th>
+                            <td><c:out value="${product.name}"/></td>
+                            <td><c:out value="${product.quantity}"/></td>
+                        </tr>
+                    </c:if>
                 </c:forEach>
                 <tr>
                     <th scope="row"></th>
