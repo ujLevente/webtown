@@ -10,7 +10,7 @@ import java.util.List;
 public class ProductRepositoryImpl implements ProductRepository {
 
     private List<Product> products;
-    private static ProductRepository instance;
+    private static ProductRepositoryImpl instance;
 
     private ProductRepositoryImpl() {
     }
@@ -18,6 +18,7 @@ public class ProductRepositoryImpl implements ProductRepository {
     public static ProductRepository getInstance() {
         if (instance == null) {
             instance = new ProductRepositoryImpl();
+            instance.initProducts();
         }
         return instance;
     }
