@@ -45,7 +45,7 @@
                 <tr>
                     <th scope="row"></th>
                     <td><b>Price</b></td>
-                    <td><b>Price(<%= service.getOriginalPrice() - service.getDiscount() + "Ft"%>)</b></td>
+                    <td><b><%= service.getOriginalPrice() - service.getDiscount() + "Ft"%></b></td>
                 </tr>
             </tbody>
         </table>
