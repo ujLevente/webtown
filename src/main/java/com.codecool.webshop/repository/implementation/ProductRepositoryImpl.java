@@ -36,5 +36,8 @@ public class ProductRepositoryImpl implements ProductRepository {
         products.add(new Product("Száraz tészta",599));
     }
 
-
+    @Override
+    public List<Product> getAllProducts() {
+        return products;
+    }
 }
