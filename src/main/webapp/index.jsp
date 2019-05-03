@@ -26,7 +26,7 @@
                 <div class="col"><b>Amount</b></div>
                 <div class="col"><b>Unit price</b></div>
             </div>
-            <form action="/cart-handler" method="get" >
+            <form action="/cart-handler" method="post" >
 
                 <c:forEach items="${productList}" var="product" varStatus="loop">
                     <div class="form-group row">

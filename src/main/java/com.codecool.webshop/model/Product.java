@@ -18,6 +18,10 @@ public class Product {
         return unitPrice;
     }
 
+    public String getDiscountType() {
+        return discountType;
+    }
+
     public void setQuantity(int quantityInCart) {
         this.quantity = quantityInCart;
     }
@@ -26,6 +30,7 @@ public class Product {
         this.discount = discount;
         this.name = name;
         this.unitPrice = unitPrice;
+        discountType = discount.getName();
     }
 
     public Product(String name, int unitPrice) {
