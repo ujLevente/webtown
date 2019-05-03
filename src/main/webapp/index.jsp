@@ -7,6 +7,7 @@
           crossorigin="anonymous">
     <title>Webtown shop</title>
     <link rel="stylesheet" href="static/css/background.css">
+    <link rel="stylesheet" href="static/css/product-submission.css">
 </head>
 
 <body>
